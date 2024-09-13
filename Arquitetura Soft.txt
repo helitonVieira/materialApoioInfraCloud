@@ -1,0 +1,69 @@
+ARQUITETURAS (conjunto de principios normas e tecnicas usadas para construção de software)
+	Arquitetura de software: como os componentes interagem entre si 
+	Designer de software: implementação deste componente (padrao de projeto, uso de algoritiomo, designer pathers)
+        Bom arquiteto tem que mitigar as desvantagens (Performace,Escalabilidade)
+	 
+
+ARQUITETURAS MVC 
+	M = Dados da aplicação
+	V = exibe para cliente
+	C = controle da aplicação transita entre os 2 
+	
+  Fluxo	
+	                             
+	www ----> routes ------>  Controler  <----------------->Model <------------> Data Base
+				       <--Model <------------
+		         <------------- View  
+	 --(  Desktop) <-------------	
+     
+     Passos
+	1 www usuario digita url ou click em link 
+	2 é chamado a rota relacionada que esta ligado ao metodo dentro do controler 
+	3 Controller chama o model que sao as tabelas (cliente, categorias, produtos)	
+	4 Model acessa o banco e busca as informações
+	5 Model devolve para controle 
+	6 Controler envia para View 
+	7 view (html)
+	
+	OBS: MVC usado para aplicações pequenas, que não tenha muita regras de negocio se não acaba 
+	     ficando muito codigo de regra de negocio no controler e na view
+	     Para aplicações que iram crescer no futuro melhor usar a Arquitetura em camadas.
+     	
+ 
+ARQUITETURAS CAMADAS 
+
+	Pode ter quantas camadas quiser mais tem que tomar cuidado para não se perder
+	Facilita desenvolver e deixar os modulos independentes 
+
+  Camadas
+	CONTROLER = Gerencia as requisições e as respostas no fluxo
+	SERVICE = Responsavel por toda regra de negocios
+	REPOSITORY = Responsavel por todas requisições feita ao banco de dados
+	ENTITY = Representação da entidade tabela do banco de dados dentro da aplicação
+	
+	
+   Fluxo	
+	                                       
+	www ----> routes ------>  Controler  <-----------------> Service  <-------------> Entity 
+					      <----------> Repository <------------> Data Base
+				<-------------> Service  	
+                    <-----------Controler
+	<-----------(	Response)    
+
+
+      OBS: Este modelo tem perda no desempenho 
+           Deve ter bom senso de não usar camadas atoua 
+           Quando precisa de auto desempenho este modelo não é recomendado
+
+ARQUITETURAS MVVM
+ARQUITETURAS CLEAN
+ARQUITETURAS PIPE AND FILTER
+ARQUITETURAS CLIENT SERVER
+ARQUITETURAS EVENT DRIVEN
+ARQUITETURAS MICROSERVICES
+
+	* MICROSERVICES (Arquitetura mais complicadas)
+	* Não foi criado para resolver problemas de software 
+	* Criado para escalar times (varias pessoas trabalhando de forma isolada)
+ 
+ 
