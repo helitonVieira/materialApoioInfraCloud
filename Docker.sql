@@ -1,5 +1,13 @@
 DOCKER  https://www.youtube.com/watch?v=yb2udL9GG2U&t=3988s
 
+Principais comando rodar no cmd na pasta que esta o arquivo docker compose
+
+INICIAR O DOCKER DESKTOP 
+docker version  (se der algum erro problema no docker)
+
+docker-compose up -d
+docker-compose stop
+
 Namespaces = isola os processos 
 CGroups = Controla os recursos 
 File System = As imagens dos arquivos que contem em cada container 
